@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+  
+    <record model="ir.ui.view" id="bebidas_sueno.list">
+      <field name="name">bebidas_sueno list</field>
+      <field name="model">bebidas_sueno.alumnos_sueno</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="alumno"/>
+          <field name="nivel_sueno"/>
+          <field name="bebida"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="bebidas_sueno.action_window">
+      <field name="name">bebidas_sueno window</field>
+      <field name="res_model">bebidas_sueno.alumnos_sueno</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="bebidas_sueno.action_server">
+      <field name="name">bebidas_sueno server</field>
+      <field name="model_id" ref="model_bebidas_sueno_alumnos_sueno"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Bebidas Sueño" id="bebidas_sueno.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Listar datos" id="bebidas_sueno.menu_1" parent="bebidas_sueno.menu_root"/>
+    <menuitem name="Formulario" id="bebidas_sueno.menu_2" parent="bebidas_sueno.menu_root"/>
+
+    <!-- actions -->
+    
+    <menuitem name="List" id="bebidas_sueno.menu_1_list" parent="bebidas_sueno.menu_1"
+              action="bebidas_sueno.action_window"/>
+    <menuitem name="Server to list" id="bebidas_sueno.menu_2_list" parent="bebidas_sueno.menu_2"
+              action="bebidas_sueno.action_server"/>
+  </data>
+</odoo>
