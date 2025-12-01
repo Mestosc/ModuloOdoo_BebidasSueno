@@ -24,7 +24,7 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv', # Acordarme siempre descomentar esta cosa
         'views/views.xml',
         'views/templates.xml',
     ],
