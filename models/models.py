@@ -19,5 +19,7 @@ class alumnos_sueno(models.Model):
                 record.bebida = "Café solo largo"
             elif record.nivel_sueno > 6 and record.nivel_sueno <= 9:
                 record.bebida = "Cafe solo largisimo"
-            else:
+            elif record.nivel_sueno == 10:
                 record.bebida = "Inyeccion de adrenalina"
+            else:
+                record.bebida = "Muerto o no tienes sueño"
