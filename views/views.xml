@@ -46,6 +46,6 @@
     <menuitem name="List" id="bebidas_sueno.menu_1_list" parent="bebidas_sueno.menu_1"
               action="bebidas_sueno.action_window"/>
     <menuitem name="Server to list" id="bebidas_sueno.menu_2_list" parent="bebidas_sueno.menu_2"
-              action="bebidas_sueno.action_server"/>
+              action="bebidas_sueno.action_server"/> -->
   </data>
 </odoo>
